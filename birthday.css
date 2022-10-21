@@ -1,0 +1,126 @@
+:root {
+    --plate-color: #FDF6F7;
+}
+
+*:not(title) {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Marker felt';
+}
+
+body {
+    flex-direction: column;
+    background: #EE4266;
+}
+
+.header {
+    margin-top: 2rem;
+    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+    font-size: min(4rem, 11vw);
+}
+
+.subheader {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.info {
+    flex-direction: column;
+}
+
+#people {
+    height: 3rem;
+    width: 5rem;
+    border-radius: 10%;
+    border: solid 1px black;
+    text-align: center;
+    font-size: 2.5rem;
+    margin: .5rem;
+}
+
+p:has(#people) {
+    font-size: 1.5rem;
+}
+
+button {
+    text-decoration: underline;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.75rem;
+    border: none;
+    border-radius: 10vw;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    background: #fb728f;
+    color: white;
+    margin: 1rem;
+}
+
+button:hover {
+    background: rgb(168, 96, 108);
+    cursor: pointer;
+}
+
+.circle {
+    border-radius: 100%;
+    aspect-ratio: 1;
+}
+
+.plate { 
+    position: relative;
+    background: var(--plate-color);
+    border: solid 1px #F4E5E0;
+    /* height: 20rem; */
+    height: min(25rem, 100vw);
+}
+
+.cake {
+    position: absolute;
+    height: 70%;
+    background: #672B01;
+    box-shadow: inset 0 0 0 8px #540e0c;
+    overflow: hidden;
+}
+
+.writing {
+    font-family: 'Cookie';
+    font-size: min(2.7rem, 11vw);
+    margin: 2rem;
+    text-align: center;
+    color: #F7A2CB;
+    text-shadow: 4px 4px 3px rgb(0 0 0 / 10%);
+    transform: scale(2,1);
+    rotate: 12deg;
+    z-index: 1;
+    position: absolute;
+}
+
+.sprinkle {
+    height: 10px;
+    width: 3px;
+    border-radius: 100vh;
+    position: absolute;
+}
+
+#missing {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    z-index: 2;
+}
+
+.count {
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.percent {
+    font-size: 5rem;
+    color: #fc7ba2;
+    text-shadow: 0 0 1px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+}
