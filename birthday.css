@@ -48,15 +48,13 @@ p:has(#people) {
 }
 
 button {
-    text-decoration: underline;
     font-weight: bold;
     font-style: italic;
     font-size: 1.75rem;
-    border: none;
     border-radius: 10vw;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    background: #fb728f;
+    background: #9d2942;
     color: white;
     margin: .5rem;
 }
@@ -77,8 +75,7 @@ button:hover {
     border: solid 1px #F4E5E0;
     height: min(25rem, 85vw);
 }
-
-.cake {
+    .cake {
     position: absolute;
     height: 85%;
     background: #672B01;
@@ -88,7 +85,7 @@ button:hover {
 
 .writing {
     font-family: 'Cookie';
-    font-size: min(2.7rem, 11vw);
+    font-size: min(3rem, 11vw);
     margin: 2rem;
     text-align: center;
     color: #F7A2CB;
