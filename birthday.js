@@ -76,8 +76,10 @@ function calculate() {
     let people = document.getElementById('people').value;
     if (!people) return;
 
-    let count = i = 0;    
+    let button = document.getElementsByTagName('button')[0];
+    button.disabled = true;
 
+    let count = i = 0;    
     let iv = setInterval(function() {
         let birthdays = getBirthdays(people);
         let twin = hasTwin(birthdays);
@@ -98,7 +100,7 @@ function calculate() {
 
         if (i >= TEST_SIZE) {
             clearInterval(iv);
-            let final = count/TEST_SIZE*100;
+            button.disabled = false;
         }
     }, 1);
 }
