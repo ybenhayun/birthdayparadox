@@ -14,7 +14,6 @@ $(document).ready(function(){
 });
 
 const SPRINK = 100;
-// const CAKE_SIZE = 200;
 function makeSprinkles() {
     let cake = document.getElementsByClassName('cake')[0];
     let cake_size = cake.offsetHeight;
@@ -94,7 +93,7 @@ function calculate() {
         let display = document.getElementsByClassName('count')[0];
         let current_percentage = document.getElementsByClassName('percent')[0];
 
-        display.innerHTML = count + " birthday twins found.<br>" + i + " total groups of " + people + ".";
+        display.innerHTML = count + " birthday twins found<br>from " + i + " groups of " + people + " people.";
         current_percentage.innerHTML = (percent*100).toFixed(2) + "%"
 
         if (i >= TEST_SIZE) {
