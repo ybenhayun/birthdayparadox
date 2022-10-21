@@ -57,11 +57,13 @@ button {
     background: #9d2942;
     color: white;
     margin: .5rem;
+    border-style: outset;
 }
 
 button:hover {
     background: rgb(168, 96, 108);
     cursor: pointer;
+    border-style: inset;
 }
 
 .circle {
