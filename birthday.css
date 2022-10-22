@@ -23,13 +23,13 @@ body {
 }
 
 .header {
-    margin-top: .5rem;
+    /* margin-top: .5rem; */
     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
     font-size: min(4rem, 11vw);
 }
 
 .subheader {
-    font-size: min(1.5rem, 4.4vw);
+    font-size: min(1.5rem, 4.2vw);
     text-align: center;
 }
 
