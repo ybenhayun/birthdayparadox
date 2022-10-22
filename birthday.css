@@ -12,9 +12,14 @@
     text-align: center;
 }
 
+html {
+    width: 100%;
+}
+
 body {
     flex-direction: column;
     background: #EE4266;
+    width: 100%;
 }
 
 .header {
@@ -25,7 +30,6 @@ body {
 
 .subheader {
     font-size: min(1.5rem, 4.4vw);
-    /* margin-bottom: 1rem; */
     text-align: center;
 }
 
@@ -34,12 +38,12 @@ body {
 }
 
 #people {
-    height: 3rem;
+    height: 2rem;
     width: 5rem;
     border-radius: 10%;
     border: solid 1px black;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     margin: .5rem;
 }
 
@@ -56,7 +60,7 @@ button {
     padding-right: 0.5rem;
     background: #9d2942;
     color: white;
-    margin: .5rem;
+    margin-bottom: .5rem;
     border-style: outset;
 }
 
