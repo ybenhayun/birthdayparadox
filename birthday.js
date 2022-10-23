@@ -91,7 +91,8 @@ function calculate() {
         let display = document.getElementsByClassName('count')[0];
         let current_percentage = document.getElementsByClassName('percent')[0];
 
-        display.innerHTML = count + " birthday twins found<br>from " + i + " groups of " + people + " people.";
+        display.innerHTML = count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " birthday twins found<br>from " 
+                            + i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " groups of " + people + " people.";
         current_percentage.innerHTML = (percent*100).toFixed(4) + "%"
 
         if (i >= TEST_SIZE) {
