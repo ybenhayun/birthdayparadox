@@ -119,12 +119,12 @@ button:hover {
 
 .count {
     /* font-size: 2rem; */
-    font-size: min(2rem, 7.1vw);
+    font-size: min(2rem, 6.6vw);
     margin-bottom: .5rem;
 }
 
 .percent {
-    font-size: 5rem;
+    font-size: min(5rem, 20vw);
     color: #fc7ba2;
     text-shadow: 0 0 1px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
 }
