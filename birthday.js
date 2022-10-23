@@ -92,7 +92,7 @@ function calculate() {
         let current_percentage = document.getElementsByClassName('percent')[0];
 
         display.innerHTML = count + " birthday twins found<br>from " + i + " groups of " + people + " people.";
-        current_percentage.innerHTML = (percent*100).toFixed(2) + "%"
+        current_percentage.innerHTML = (percent*100).toFixed(4) + "%"
 
         if (i >= TEST_SIZE) {
             clearInterval(iv);
