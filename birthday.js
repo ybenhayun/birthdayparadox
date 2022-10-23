@@ -71,7 +71,8 @@ function makeSlice(percent) {
     ctx.stroke();
 }
 
-const TEST_SIZE = 2500;
+const TEST_SIZE = 1000000;
+const INCREMENT = 3125;
 function calculate() {
     let people = document.getElementById('people').value;
     if (!people) return;
@@ -81,14 +82,9 @@ function calculate() {
 
     let count = i = 0;    
     let iv = setInterval(function() {
-        let birthdays = getBirthdays(people);
-        let twin = hasTwin(birthdays);
+        count += simulateBirthdays(people);
         
-        if (twin) {
-            count++;
-        }
-        
-        i++;
+        i += INCREMENT;
         let percent = count/i;
 
         makeSlice(percent);
@@ -103,6 +99,21 @@ function calculate() {
             button.disabled = false;
         }
     }, 1);
+}
+
+function simulateBirthdays(num) {
+    let count = 0;
+
+    for (let i = 0; i < INCREMENT; i++) {
+        let birthdays = getBirthdays(num);
+        let twin = hasTwin(birthdays);
+
+        if (twin) {
+            count++;
+        }
+    }
+
+    return count;
 }
 
 function getBirthdays(people) {

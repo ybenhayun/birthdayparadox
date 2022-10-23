@@ -29,7 +29,7 @@ body {
 }
 
 .subheader {
-    font-size: min(1.5rem, 4.2vw);
+    font-size: min(1.5rem, 4vw);
     text-align: center;
 }
 
