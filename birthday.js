@@ -75,14 +75,15 @@ const TEST_SIZE = 1000000;
 const INCREMENT = 3125;
 function calculate() {
     let people = document.getElementById('people').value;
-    if (!people) return;
+    let num_matches = document.getElementById('twins').value;
+    if (!people || !num_matches || num_matches < 2) return;
 
     let button = document.getElementsByTagName('button')[0];
     button.disabled = true;
 
     let count = i = 0;    
     let iv = setInterval(function() {
-        count += simulateBirthdays(people);
+        count += simulateBirthdays(people, num_matches);
         
         i += INCREMENT;
         let percent = count/i;
@@ -90,8 +91,13 @@ function calculate() {
         makeSlice(percent);
         let display = document.getElementsByClassName('count')[0];
         let current_percentage = document.getElementsByClassName('percent')[0];
+        
+        let group = GROUPS[num_matches-2];
+        if (!group) {
+            group = num_matches + "-lets";
+        }
 
-        display.innerHTML = count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " birthday twins found<br>from " 
+        display.innerHTML = count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " birthday " + group + " found<br>from " 
                             + i.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " groups of " + people + " people.";
         current_percentage.innerHTML = (percent*100).toFixed(4) + "%"
 
@@ -102,12 +108,25 @@ function calculate() {
     }, 1);
 }
 
-function simulateBirthdays(num) {
+const GROUPS = 
+[
+    "twins",
+    "triplets", 
+    "quadruplets",
+    "quintuplets",
+    "sextuplets",
+    "septuplets",
+    "octoplets",
+    "nonuplets",
+    "decuplets",
+]
+
+function simulateBirthdays(group_size, num_matches) {
     let count = 0;
 
     for (let i = 0; i < INCREMENT; i++) {
-        let birthdays = getBirthdays(num);
-        let twin = hasTwin(birthdays);
+        let birthdays = getBirthdays(group_size);
+        let twin = hasTwin(birthdays, num_matches);
 
         if (twin) {
             count++;
@@ -133,15 +152,19 @@ function getBirthdays(people) {
     return birthdays;
 }
 
-function hasTwin(birthdays) {
+function hasTwin(birthdays, num_matches) {
     let checked = [];
 
     for (let i = 0; i < birthdays.length; i++) {
-        if (checked[birthdays[i]]) {
+        if (!checked[birthdays[i]]) {
+            checked[birthdays[i]] = 0;
+        } 
+        
+        checked[birthdays[i]]++;
+
+        if (checked[birthdays[i]] == num_matches) {
             return true;
         }
-
-        checked[birthdays[i]] = true;
     }
 
     return false;
